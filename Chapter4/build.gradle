@@ -8,6 +8,8 @@ task second {
     println "second"
 }
 
+first.finalizedBy second
+
 task printVersion(dependsOn: [second, first]) {
     group = 'versioning'
     description = 'Prints project version.'
