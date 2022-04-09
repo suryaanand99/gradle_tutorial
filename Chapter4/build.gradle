@@ -1,6 +1,14 @@
 version = '0.1-SNAPSHOT'
 
-task printVersion {
+task first {
+    println "first"
+}
+
+task second {
+    println "second"
+}
+
+task printVersion(dependsOn: [second, first]) {
     group = 'versioning'
     description = 'Prints project version.'
 
@@ -13,3 +21,8 @@ task printVersion {
 }
 printVersion.doFirst { println "First action" }
 printVersion.doLast { println "Last action" }
+
+task third {
+    println "third"
+}
+third.dependsOn('printVersion')
