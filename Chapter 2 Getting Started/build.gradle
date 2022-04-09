@@ -1,0 +1,6 @@
+//TORUN: gardle -q helloWorld
+task helloWorld {
+    doLast {
+        println "hello world"
+    }
+}
