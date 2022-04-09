@@ -1,13 +1,7 @@
 setDescription("myProject")
 println "Description of project $name: " + project.description
 
-project.ext.myProp = 'myValue'
-
-ext {
-    someOtherProp = 123
+println project.exampleProp
+task printGradleProperty {
+    println "Second property: $someOtherProp"
 }
-
-assert myProp == 'myValue'
-println project.someOtherProp
-ext.someOtherProp = 579
-println project.someOtherProp
