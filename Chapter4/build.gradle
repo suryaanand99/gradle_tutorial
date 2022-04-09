@@ -1,2 +1,13 @@
 setDescription("myProject")
 println "Description of project $name: " + project.description
+
+project.ext.myProp = 'myValue'
+
+ext {
+    someOtherProp = 123
+}
+
+assert myProp == 'myValue'
+println project.someOtherProp
+ext.someOtherProp = 579
+println project.someOtherProp
