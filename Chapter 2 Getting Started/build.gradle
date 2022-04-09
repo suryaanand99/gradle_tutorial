@@ -4,3 +4,27 @@ task helloWorld {
         println "hello world"
     }
 }
+
+task startSession {
+    doLast {
+        chant()
+    }
+}
+
+def chant(){
+    ant.echo(message: 'Repeat after me...')
+}
+
+3.times {
+    task "yayGradle$it" {
+        doLast {
+            println "Gradle Rocks!"
+        }
+    }
+}
+
+yayGradle0.dependsOn startSession
+yayGradle2.dependsOn yayGradle0, yayGradle1
+
+//TORUN: gardle groupThreapy
+task groupThreapy(dependsOn: yayGradle2)
