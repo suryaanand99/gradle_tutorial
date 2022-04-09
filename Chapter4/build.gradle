@@ -62,3 +62,26 @@ class ReleaseVersionTask extends DefaultTask {
         }
     }
 }
+
+apply plugin: 'war'
+
+task createDistribution(type: Zip, dependsOn: makeReleaseVersion) {
+    from war.outputs.files
+    from(sourceSets*.allSource) {
+        into 'src'
+    }
+    from(rootDir) {
+        include versionFile.name
+    }
+}
+
+task backupReleaseDistribution(type: Copy) {
+    from createDistribution.outputs.files
+    into "$buildDir/backup"
+}
+
+task release(dependsOn: backupReleaseDistribution) {
+    doLast {
+        logger.quiet 'Releasing the project...'
+    }
+}
