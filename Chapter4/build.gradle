@@ -1,7 +1,7 @@
-setDescription("myProject")
-println "Description of project $name: " + project.description
+version = '0.1-SNAPSHOT'
 
-println project.exampleProp
-task printGradleProperty {
-    println "Second property: $someOtherProp"
+task printVersion {
+    doLast {
+        println "version: $version"
+    }
 }
