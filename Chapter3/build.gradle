@@ -8,3 +8,19 @@ jar{
         attributes 'Main-Class': 'com.manning.gia.todo.ToDoApp'
     }
 }
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/main/test']
+        }
+    }
+}
+
+buildDir = 'build'
+
