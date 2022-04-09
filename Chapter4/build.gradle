@@ -42,13 +42,22 @@ task printVersion {
     }
 }
 
-task makeReleaseVersion(group: 'versioning', description: 'Makes project a release version.') {
-    inputs.property('release', version.release)
-    outputs.file versionFile
+task makeReleaseVersion(type: ReleaseVersionTask) {
+    release = version.release
+    destFile = versionFile
+}
 
-    doLast {
-        version.release = true
-        ant.propertyfile(file: versionFile) {
+class ReleaseVersionTask extends DefaultTask {
+    @Input Boolean release
+    @OutputFile File destFile
+    ReleaseVersionTask() {
+        group = 'versioning'
+        description = 'Makes project a release version.'
+    }
+    @TaskAction
+    void start() {
+        project.version.release = true
+        ant.propertyfile(file: destFile) {
             entry(key: 'release', type: 'string', operation: '=', value: 'true')
         }
     }
