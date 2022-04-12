@@ -1,0 +1,28 @@
+// to run this file: gradle -b project-explict.gradle
+project.description = "Hello World Project"
+println "project description: ${project.description}"
+
+ext {
+    outputLang = "English"
+}
+ext.environment = "local"
+println "Output Language: ${project.outputLang}"
+println "Environment: ${environment}"
+
+description = "Sample Description for Project"
+defaultTasks 'displayProperties'
+task displayProperties {
+    description = "Task to display properties"
+    ext {
+        taskProp1 = "Prop Val"
+    }
+    doFirst {
+        println "Project Description: $project.description"
+        println "Task name $name"
+        println "Task Description: $description"
+    }
+    doLast {
+        println "Task Property 1: $taskProp1"
+    }
+}
+
