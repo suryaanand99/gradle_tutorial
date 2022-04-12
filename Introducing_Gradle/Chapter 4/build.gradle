@@ -35,3 +35,10 @@ task skipInProd {
         println 'Task execution complete'
     }
 }
+
+task skipInDev {
+    enabled = !project.hasProperty('env') || project.env != "Dev"
+    doLast {
+        println 'Task execution complete'
+    }
+}
