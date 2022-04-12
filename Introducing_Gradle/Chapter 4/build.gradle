@@ -1,4 +1,4 @@
-// to run this file: gradle -b project-explict.gradle
+// to run a external build file: gradle -b <filename>.gradle
 project.description = "Hello World Project"
 println "project description: ${project.description}"
 
@@ -26,3 +26,12 @@ task displayProperties {
     }
 }
 
+// To pass a external property in cmd, use: gradle -pname="value" build
+task skipInProd {
+    onlyIf {
+        !project.hasProperty('env') || project.env != "Prod"
+    }
+    doLast {
+        println 'Task execution complete'
+    }
+}
