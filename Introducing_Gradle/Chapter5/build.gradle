@@ -1,0 +1,5 @@
+apply plugin: HelloPlugin
+
+/*
+when you run: gradle greet, task greet defined in HelloPlugin will be executed
+ */

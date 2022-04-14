@@ -4,3 +4,6 @@
 */buildSrc/.gradle
 */buildSrc/build
 /Introducing_Gradle/Chapter 4/.gradle/*
+Introducing_Gradle/Chapter5/.gradle/*
+Introducing_Gradle/Chapter5/buildSrc/.gradle/*
+Introducing_Gradle/Chapter5/buildSrc/build/*
