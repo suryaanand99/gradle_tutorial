@@ -3,3 +3,9 @@ apply plugin: HelloPlugin
 /*
 when you run: gradle greet, task greet defined in HelloPlugin will be executed
  */
+
+apply plugin: HelloPlugin2
+
+/*
+when you run: gradle greet2, task greet2 defined in HelloPlugin2 will be executed
+ */
