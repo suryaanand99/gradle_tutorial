@@ -35,4 +35,14 @@ repositories {
         }
     }
 }
+
+repositories {
+    mavenLocal()
+}
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+}
  */
