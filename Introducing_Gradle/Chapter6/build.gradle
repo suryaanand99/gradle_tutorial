@@ -1,9 +1,17 @@
 apply plugin: 'java'
+
+ext {
+    logbackVersion = '1.1.2'
+    commonsLangVersion = '3.4'
+    junitVersion = '4.12'
+    hsqlDbVersion = '2.3.3'
+}
+
 dependencies {
-    compileOnly 'ch.qos.logback:logback-classic:1.1.2', 'org.apache.commons:commons-lang3:3.4'
+    compileOnly "ch.qos.logback:logback-classic:$logbackVersion", "org.apache.commons:commons-lang3:$commonsLangVersion"
     testCompileOnly (
-            [group: 'junit', name: 'junit', version: '4.12'],
-            [group: 'org.hsqldb', name: 'hsqldb', version: '2.3.3']
+            [group: 'junit', name: 'junit', version: "$junitVersion"],
+            [group: 'org.hsqldb', name: 'hsqldb', version: "$hsqlDbVersion"]
     )
 }
 repositories {
