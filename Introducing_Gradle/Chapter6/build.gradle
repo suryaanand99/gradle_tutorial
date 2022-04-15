@@ -9,7 +9,7 @@ ext {
 
 configurations.all {
     resolutionStrategy {
-        force 'commons-logging:commons-logging:1.1.1'
+        failOnVersionConflict()
     }
 }
 
