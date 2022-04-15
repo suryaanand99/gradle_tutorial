@@ -13,6 +13,7 @@ dependencies {
             [group: 'junit', name: 'junit', version: "$junitVersion"],
             [group: 'org.hsqldb', name: 'hsqldb', version: "$hsqlDbVersion"]
     )
+    compileOnly project (":Chapter5")
 }
 repositories {
     mavenCentral()
