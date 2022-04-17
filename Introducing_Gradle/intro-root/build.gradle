@@ -8,18 +8,3 @@ subprojects {
         mavenCentral()
     }
 }
-project (':service') {
-    apply plugin: 'java'
-    dependencies {
-        implementation project(':repository')
-    }
-}
-project (':repository') {
-    apply plugin: 'java'
-}
-project(':web') {
-    apply plugin: 'war'
-    dependencies {
-        implementation project(':service')
-    }
-}

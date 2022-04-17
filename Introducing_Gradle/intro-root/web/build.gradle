@@ -1,0 +1,4 @@
+apply plugin: 'war'
+dependencies {
+    implementation project(':service')
+}
