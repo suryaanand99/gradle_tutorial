@@ -8,3 +8,6 @@ subprojects {
         mavenCentral()
     }
 }
+project(':web') {
+    apply plugin: 'war'
+}
