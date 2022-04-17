@@ -7,3 +7,5 @@
 Introducing_Gradle/Chapter5/.gradle/*
 Introducing_Gradle/Chapter5/buildSrc/.gradle/*
 Introducing_Gradle/Chapter5/buildSrc/build/*
+/Introducing_Gradle/Chapter6/.gradle/*
+/Introducing_Gradle/intro-root/.gradle/*
