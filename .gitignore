@@ -9,3 +9,7 @@ Introducing_Gradle/Chapter5/buildSrc/.gradle/*
 Introducing_Gradle/Chapter5/buildSrc/build/*
 /Introducing_Gradle/Chapter6/.gradle/*
 /Introducing_Gradle/intro-root/.gradle/*
+/Introducing_Gradle/intro-root/build/*
+/Introducing_Gradle/intro-root/repository/build/*
+/Introducing_Gradle/intro-root/web/build/*
+/Introducing_Gradle/intro-root/service/build/*
